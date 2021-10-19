@@ -10,7 +10,7 @@ subtitulos.forEach(element => {
     
     const retorno = document.createElement('a');
     retorno.setAttribute('href', '#');
-    retorno.textContent = "início"
+    retorno.textContent = "início";
     element.parentElement.insertBefore(retorno, element.nextElementSibling);
 });
 
