@@ -1,27 +1,27 @@
-const subtitulos = document.querySelectorAll("h2");
-const topicos = new Array();
+const textos = document.querySelectorAll('h2')
+const sumario = document.querySelector('ol')
+const topicos = []
 
-subtitulos.forEach(element => {
-    topicos.push(element.textContent);
-    
-    const ancora = createElement('a');
-    ancora.setAttribute('name', element.textContent);
-    element.append(ancora);
-    
-    const retorno = document.createElement('a');
-    retorno.setAttribute('href', '#');
-    retorno.textContent = "início";
-    element.parentElement.insertBefore(retorno, element.nextElementSibling);
-});
+const newAnchor = (href, text) => {
+    const anchor = document.createElement('a')
+    anchor.href = href
+    anchor.innerHTML = text
+    return anchor
+}
 
-const lista = document.querySelector("ol");
-topicos.forEach(topico => {
-    const item = document.createElement("li");
-    item.textContent = topico;
-    lista.append(item);
-    
-    const link = document.createElement('a');
-    link.setAttribute('href', `#${topico}`);
-    item.textContent = topico;
-    item.append(link);
-});
+const addReturn = texto => {
+    topicos.push(texto.textContent)
+    const a = newAnchor('#', 'Retornar')
+    texto.innerHTML = texto.textContent
+    texto.append(a)
+}
+
+const addTopic = topico => {
+    const item = document.createElement('li')
+    const a = newAnchor(`#${topico}`, topico)
+    item.append(a)
+    sumario.append(item)
+}
+
+textos.forEach(addReturn)
+topicos.forEach(addTopic)
