@@ -7,12 +7,12 @@ textos.forEach(texto => {
 });
 const sumario = document.querySelector('ol');
 topicos.forEach(topico => {
-    const item = document.createElement('li')
-    const a = document.createElement('a')
+    const item = document.createElement('li');
+    const a = document.createElement('a');
 
-    a.href = `#${topico}`
-    a.innerHTML = topico
+    a.href = `#${topico}`;
+    a.innerHTML = topico;
 
-    item.append(a)
-    sumario.append(item)
+    item.append(a);
+    sumario.append(item);
 });
