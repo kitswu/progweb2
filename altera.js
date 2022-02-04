@@ -1,7 +1,9 @@
 f_HExiste()
 
 function f_HExiste() {
-  for (let i =1; i < 7; i++) {
+
+  for (let i = 1; i < 7; i++) {
+
     if (document.querySelector(`h${i}`) != null){
 
       const titulo = document.querySelector(`h${i}`);
@@ -9,6 +11,7 @@ function f_HExiste() {
       titulo.setAttribute('id','titulo');
       
       f_criar(titulo);
+      
     };
   };
 };
@@ -34,7 +37,7 @@ function iniciar(){
   mudar.fontSize = "40px";		
 };
 
-function f_aumentarTamanho(titulo) { 
+function f_aumentarTamanho() { 
 
   const titulo = document.querySelector("#titulo");
 
@@ -45,7 +48,7 @@ function f_aumentarTamanho(titulo) {
   };
 };
 
-function f_diminuirTamanho(titulo) {
+function f_diminuirTamanho() {
 
   const titulo = document.querySelector("#titulo");
 
@@ -55,3 +58,4 @@ function f_diminuirTamanho(titulo) {
       titulo.style.fontSize = tamanho + "px"; 
   };   
 };
+
